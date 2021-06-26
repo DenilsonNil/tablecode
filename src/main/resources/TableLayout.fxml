@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.kualit.tablecodegenerator.controller.TableController">
+   <children>
+      <Label layoutX="222.0" layoutY="23.0" text="Criação da Tabela">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="105.0" layoutY="82.0" text="Id da Tabela:" />
+      <TextField fx:id="txtTableId" layoutX="181.0" layoutY="70.0" prefHeight="25.0" prefWidth="276.0" />
+      <Label layoutX="80.0" layoutY="113.0" text="Nome da Coluna:" />
+      <TextField fx:id="txtColumnName" layoutX="181.0" layoutY="102.0" prefHeight="25.0" prefWidth="276.0" />
+      <ChoiceBox fx:id="cbColumnDataType" layoutX="181.0" layoutY="138.0" prefHeight="25.0" prefWidth="152.0" />
+      <Label layoutX="87.0" layoutY="147.0" text="Tipo da Coluna:" />
+      <Button fx:id="btnCleanAllData" layoutX="471.0" layoutY="258.0" mnemonicParsing="false" onAction="#cleanData" prefHeight="25.0" prefWidth="119.0" text="Limpar" />
+      <Button fx:id="btnCreateJavaFile" layoutX="471.0" layoutY="301.0" mnemonicParsing="false" onAction="#createJavaFile" prefHeight="25.0" prefWidth="119.0" text="Gravar Arquivo" />
+      <Button fx:id="btnAddColumn" layoutX="471.0" layoutY="220.0" mnemonicParsing="false" onAction="#generateColumnData" prefHeight="25.0" prefWidth="119.0" text="Adicionar Coluna" />
+      <Label layoutX="52.0" layoutY="183.0" text="Atributo a ser mostrado" />
+      <ChoiceBox fx:id="cbAttributes" layoutX="182.0" layoutY="173.0" prefWidth="150.0" />
+      <RadioButton fx:id="rbEditable" layoutX="473.0" layoutY="156.0" mnemonicParsing="false" text="Coluna editável" />
+      <RadioButton fx:id="rbShowCheck" layoutX="472.0" layoutY="183.0" mnemonicParsing="false" text="Mostrar Checkbox" />
+      <RadioButton fx:id="rbOnlyExibition" layoutX="473.0" layoutY="130.0" mnemonicParsing="false" text="Somente Exibição" />
+      <TableView fx:id="table" layoutX="52.0" layoutY="220.0" prefHeight="172.0" prefWidth="413.0">
+      <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+        <columns>
+          <TableColumn fx:id="col_name" prefWidth="75.0" text="Coluna" minWidth="150" maxWidth="150" />
+          <TableColumn fx:id="col_editable" prefWidth="75.0" text="Editável"  minWidth="80" maxWidth="80"/>
+            <TableColumn fx:id="col_check" prefWidth="111.0" text="Mostra Checbox"  minWidth="110" maxWidth="110"/>
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
